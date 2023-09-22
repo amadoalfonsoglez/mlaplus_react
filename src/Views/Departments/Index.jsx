@@ -7,7 +7,7 @@ import {sendRequest, confirmation} from '../../functions';
 const Departments = () => {
   const [departments, setDepartments] = useState([]);
   const [classLoad, setClassLoad] = useState('');
-  const [classTable, setClassTable] = useState('');
+  const [classTable, setClassTable] = useState('d-none');
 
   useEffect(() => {
     getDepartments();
@@ -21,7 +21,7 @@ const Departments = () => {
   }
 
   const deleteDepartment = (id, name) => {
-     confirmation(name, ('/api/departments/'+id, '/') ;
+     confirmation(name, ('/api/departments/'+id), '/') ;
   }
 
   return (
@@ -31,6 +31,40 @@ const Departments = () => {
           <i className='fa-solid fa-circle-plus'></i> Add
         </Link>
       </DivAdd>
+      <DivTable col='6' off='3' classLoad={classLoad} classTable={classTable}>
+          <table className='table table-bordered' >
+            <thead >
+              <tr>
+              <th>#</th>
+              <th>Department</th>
+              <th></th>
+              <th></th>
+              </tr>              
+            </thead>
+            <tbody className='table-group-divider'>
+                {departments.map((row, i)=>(
+                  <tr key={row.id}>
+                    <td>{(i+1)}</td>
+                    <td>{row.name}</td>
+                    <td>
+                      <Link to={'/edit/'+row.id} className='btn btn-warning' >
+                        <i className='fa-solid fa-edit'></i>
+                      </Link>
+                    </td>
+                    <td>
+                      <button className='btn btn-danger' onClick={() => deleteDepartment(row.id, row.name)} >
+                        <i className='fa-solid fa-trash' ></i>
+                      </button>
+                    </td>
+                  </tr>
+
+                )
+                )
+
+                }
+            </tbody>
+          </table>
+      </DivTable>
     </div>
   )
 }

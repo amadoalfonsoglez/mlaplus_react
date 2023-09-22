@@ -17,7 +17,7 @@ const Nav = () => {
         <button className='navbar-toggler' type='button' data-bs-toggle='collapse' data-bs-target='#nav' aria-controls='navbarSupportedContent'>
           <span className='navbar-toggler-icon'></span>
         </button>
-      </div>
+      
       {storage.get('authUser') ? (
       <div className='collapse navbar-collapse' id='nav'>
       <ul className='navbar-nav mx-auto mb-2'>
@@ -25,7 +25,7 @@ const Nav = () => {
           {storage.get('authUser').name}
         </li>
         <li className='nav-item px-lg-5'>
-          <Link to='/departments' className='nav-link' >Departments</Link>
+          <Link to='/' className='nav-link' >Departments</Link>
         </li>
         <li className='nav-item px-lg-5'>
           <Link to='/employees' className='nav-link' >Employees</Link>
@@ -41,6 +41,7 @@ const Nav = () => {
       </ul>
     </div>
     ) : ''}
+    </div>
     </nav>
   )
 }

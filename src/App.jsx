@@ -16,7 +16,6 @@ import ProtectedRoutes from "./Components/ProtectedRoutes";
 
 function App() {
 
-
   return (
   <BrowserRouter>
     <Nav></Nav>
@@ -26,7 +25,7 @@ function App() {
       <Route element={<ProtectedRoutes />} >
         <Route path="/" element={<Departments />} />
         <Route path="/create" element={<CreateDepartment />} />
-        <Route path="/edit/id" element={<EditDepartments />} />
+        <Route path="/edit/{id}" element={<EditDepartments />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/graphics" element={<GraphicEmployees />} />
       </Route>
