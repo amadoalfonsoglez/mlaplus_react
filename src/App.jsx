@@ -1,3 +1,4 @@
+import * as React from 'react';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Nav from "./Components/Nav";
 import Departments from "./Views/Departments/Index";
@@ -5,7 +6,7 @@ import CreateDepartment from "./Views/Departments/Create";
 import EditDepartments from "./Views/Departments/Edit";
 
 import Employees from "./Views/Employees/Index";
-import GraphicEmployees from "./Views/Employees/Graphics";
+const GraphicEmployees = React.lazy(() => import('./Views/Employees/Graphics'));
 //import CreateEmployees from "./Views/Employees/Create";
 //import EditEmployees from "./Views/Employees/Edit";
 
@@ -25,7 +26,7 @@ function App() {
       <Route element={<ProtectedRoutes />} >
         <Route path="/" element={<Departments />} />
         <Route path="/create" element={<CreateDepartment />} />
-        <Route path="/edit/{id}" element={<EditDepartments />} />
+        <Route path="/edit/:id" element={<EditDepartments />} />
         <Route path="/employees" element={<Employees />} />
         <Route path="/graphics" element={<GraphicEmployees />} />
       </Route>

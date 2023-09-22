@@ -27,9 +27,11 @@ const Departments = () => {
   return (
     <div className='container-fluid'>
       <DivAdd>
-        <Link to='create' className='btn btn-white'>
-          <i className='fa-solid fa-circle-plus'></i> Add
-        </Link>
+        <div col='1' >
+          <Link to='create' className='btn btn-info'>
+            <i className='fa-solid fa-circle-plus'></i> Add
+          </Link>
+        </div>
       </DivAdd>
       <DivTable col='6' off='3' classLoad={classLoad} classTable={classTable}>
           <table className='table table-bordered' >

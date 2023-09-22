@@ -106,9 +106,11 @@ const Employees = () => {
   return (
     <div className='container-fluid'>
       <DivAdd>
-        <button className='btn btn-dark' data-bs-toggle='modal' data-bs-target='#modalEmployees' onClick={()=>openModal(1)}>
-          <i className='fa-solid fa-circle-plus'></i> Add
-        </button>
+        <div col='1' >
+          <button className='btn btn-info' data-bs-toggle='modal' data-bs-target='#modalEmployees' onClick={()=>openModal(1)}>
+            <i className='fa-solid fa-circle-plus'></i> Add
+          </button>
+        </div>
       </DivAdd>
       <DivTable col='10' off='1' classLoad={classLoad} classTable={classTable}>
           <table className='table table-bordered' >

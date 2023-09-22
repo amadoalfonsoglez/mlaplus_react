@@ -19,27 +19,27 @@ const Nav = () => {
         </button>
       
       {storage.get('authUser') ? (
-      <div className='collapse navbar-collapse' id='nav'>
-      <ul className='navbar-nav mx-auto mb-2'>
-        <li className='nav-item px-lg-5 h4'>
-          {storage.get('authUser').name}
-        </li>
-        <li className='nav-item px-lg-5'>
-          <Link to='/' className='nav-link' >Departments</Link>
-        </li>
-        <li className='nav-item px-lg-5'>
-          <Link to='/employees' className='nav-link' >Employees</Link>
-        </li>
-        <li className='nav-item px-lg-5'>
-          <Link to='/graphics' className='nav-link' >Graphics</Link>
-        </li>
-      </ul>
-      <ul className='navbar-nav mx-auto mb-2'>
-        <li className='nav-item px-lg-5'>
-          <button className='btn btn-info' onClick={logout}>Logout</button>
-        </li>
-      </ul>
-    </div>
+        <div className='collapse navbar-collapse' id='nav'>
+          <ul className='navbar-nav mx-auto mb-2'>
+            <li className='nav-item px-lg-5 h5'>
+              {storage.get('authUser').name}
+            </li>
+            <li className='nav-item px-lg-5'>
+              <Link to='/' className='nav-link' >Departments</Link>
+            </li>
+            <li className='nav-item px-lg-5'>
+              <Link to='/employees' className='nav-link' >Employees</Link>
+            </li>
+            <li className='nav-item px-lg-5'>
+              <Link to='/graphics' className='nav-link' >Graphics</Link>
+            </li>
+          </ul>
+          <ul className='navbar-nav mx-auto mb-2'>
+            <li className='nav-item px-lg-5'>
+              <button className='btn btn-info' onClick={logout}>Logout</button>
+            </li>
+          </ul>
+      </div>
     ) : ''}
     </div>
     </nav>

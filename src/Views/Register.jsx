@@ -27,9 +27,9 @@ const Register = () => {
     <div className='container-fluid'>
       <div className='row mt-5'>
         <div className='col-md-4 offset-md-4'>
-          <div className='car border border-primary'>
+          <div className='card border border-primary'>
             <div className='card-header bg-primary border border-primary text.white'>
-              LOGIN
+              REGISTER
             </div>
             <div className='card-body'>
               <form onSubmit={register}>
@@ -42,9 +42,11 @@ const Register = () => {
                   </button>
                 </div>
               </form>
-              <Link to='/login'>
-                <i className='fa-solid fa-door-open' ></i> Login
-              </Link>
+              <div className='mt-3'>
+                <Link to='/login'>
+                  <i className='fa-solid fa-door-open' ></i> Login
+                </Link>
+              </div>
             </div>
           </div>
         </div>
